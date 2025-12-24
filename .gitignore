@@ -1,0 +1,30 @@
+# --- Python 기본 ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- 가상환경 (Conda/Venv) ---
+venv/
+env/
+.venv/
+.conda/
+# 사용자가 만든 특정 환경 이름도 추가 가능
+discord_notify/
+
+# --- IDE 설정 (PyCharm, VSCode) ---
+.idea/
+.vscode/
+*.swp
+
+# --- PyInstaller 빌드 결과물 (중요: 용량이 큼) ---
+build/
+dist/
+*.spec
+
+# --- 로그 및 임시 파일 ---
+*.log
+*.tmp
+
+# --- (선택) 보안: 토큰이 들어있는 파일이 있다면 제외 ---
+# secrets.py
+# .env

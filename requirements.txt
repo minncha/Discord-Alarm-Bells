@@ -1,0 +1,12 @@
+# Windows Runtime API 접근
+winsdk
+
+# HTTP 요청 (텔레그램 API용)
+requests
+
+# 시스템 트레이 아이콘 지원
+pystray
+Pillow
+
+# EXE 실행 파일 변환 도구
+pyinstaller
