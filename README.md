@@ -18,9 +18,8 @@ Windows 알림 센터(Toast Notification)에 뜨는 Discord 알림을 감지하�
 
 1. **가상환경 생성 및 활성화 (Conda)**
    ```bash
-   conda create -n discord_alarm python=3.10
-   conda activate discord_alarm
-
+   conda create -n discord_notify python=3.10
+   conda activate discord_notify
    ```
 
 2. **패키지 설치**
@@ -28,7 +27,6 @@ Windows 알림 센터(Toast Notification)에 뜨는 Discord 알림을 감지하�
 
    ```bash
    pip install -r requirements.txt
-
    ```
 
 
@@ -43,7 +41,6 @@ TELEGRAM_TOKEN = "여기에_텔레그램_봇_토큰"
 CHAT_ID = "여기에_CHAT_ID"
 TARGET_APP_KEYWORD = "Discord"  # 감지할 앱 이름 (대소문자 구분 없음)
 ICON_FILE_NAME = "Bells.ico"     # 아이콘 파일명
-
 ```
 
 ## ▶️ 실행 및 빌드 (Usage & Build)
@@ -52,7 +49,6 @@ ICON_FILE_NAME = "Bells.ico"     # 아이콘 파일명
 
 ```bash
 python discord_alarm.py
-
 ```
 
 ### 2. EXE 실행 파일 만들기
@@ -60,8 +56,7 @@ python discord_alarm.py
 `pyinstaller`를 사용하여 단일 실행 파일(.exe)로 변환합니다.
 
 ```bash
-pyinstaller -w -F -i "Bells.ico" --name "DiscordAlarm" discord_alarm.py
-
+pyinstaller -w -F --add-data "bells.ico;." -i "bells.ico" --name "DiscordAlarm" discord_alarm.py
 ```
 
 > **옵션 설명:**
@@ -79,7 +74,3 @@ pyinstaller -w -F -i "Bells.ico" --name "DiscordAlarm" discord_alarm.py
 * **Discord 설정:** 앱 설정 > 알림 > **'데스크톱 알림 활성화'**가 켜져 있어야 합니다.
 * **방해 금지 모드:** Discord 상태가 '방해 금지(빨간색)'이거나, Windows가 '집중 지원 모드'일 경우 알림이 뜨지 않아 감지할 수 없습니다.
 * **창 활성화 이슈:** PC에서 Discord 창을 보고 있는 상태(활성화)에서는 윈도우 알림이 발생하지 않습니다. **테스트 시 Discord 창을 최소화해 주세요.**
-
-```
-
-```
