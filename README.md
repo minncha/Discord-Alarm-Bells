@@ -21,14 +21,15 @@ Windows 알림 센터(Toast Notification)에 뜨는 Discord 알림을 감지하�
    conda create -n discord_alarm python=3.10
    conda activate discord_alarm
 
-```
+   ```
 
 2. **패키지 설치**
 `requirements.txt` 파일이 있다면 아래 명령어로 설치합니다.
-```bash
-pip install -r requirements.txt
 
-```
+   ```bash
+   pip install -r requirements.txt
+
+   ```
 
 
 *(없다면 수동 설치: `pip install winsdk requests pystray Pillow pyinstaller`)*

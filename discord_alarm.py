@@ -19,6 +19,8 @@ TELEGRAM_TOKEN = "YOUR_BOT_TOKEN_HERE"
 CHAT_ID = "YOUR_CHAT_ID_HERE"
 TARGET_APP_KEYWORD = "Discord"
 ICON_FILE_NAME = "bells.ico"
+
+
 # ==========================================
 
 def resource_path(relative_path):
@@ -160,8 +162,9 @@ class NotificationApp:
                             title = extracted[0] if extracted else "알림"
                             body = " ".join(extracted[1:]) if len(extracted) > 1 else ""
 
-                            self.log(f"{body[:15]}...")
-                            self.send_telegram(app_name, body)
+                            if "was rung at" in body:  # "was rung at" 문구 포함 시에만 알림
+                                self.log(f"{body[:15]}...")
+                                self.send_telegram(app_name, body)
                     except:
                         pass
                     processed_ids.add(n_id)
